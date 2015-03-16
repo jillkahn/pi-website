@@ -10,16 +10,17 @@ var calcPi = function(r) {
 	}
 	circleArea=circleArea*4;
 	var pi=circleArea/Math.pow(r,2);
-	$('#answer').text(pi);
-	console.log(circleArea);
+	return pi;
 }
 
 $(document).ready(function() {
 	$( "form" ).submit(function( event ) {
 		event.preventDefault();
+		$('#answer').text('unknown');
 
 		var r = $('#radius').val();
-		calcPi(r);
+		var pi = calcPi(r);
+		$('#answer').text(pi);
 	});
 
 });
